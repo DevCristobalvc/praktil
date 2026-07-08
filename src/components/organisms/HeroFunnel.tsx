@@ -85,20 +85,6 @@ export function HeroFunnel() {
         />
       </div>
 
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.2, duration: 0.8 }}
-        className="absolute bottom-8 z-10 text-xs tracking-widest uppercase text-muted"
-      >
-        <motion.span
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="inline-block"
-        >
-          ↓ {t("scrollHint")}
-        </motion.span>
-      </motion.span>
     </section>
   );
 }
