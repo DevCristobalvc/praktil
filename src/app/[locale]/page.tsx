@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { TopBar } from "@/components/organisms/TopBar";
 import { HeroFunnel } from "@/components/organisms/HeroFunnel";
+import { HardwareDecomposition } from "@/components/organisms/HardwareDecomposition";
+import { TeamSection } from "@/components/organisms/TeamSection";
+import { ContactSection } from "@/components/organisms/ContactSection";
 
 export default async function HomePage({
   params,
@@ -20,6 +23,9 @@ export default async function HomePage({
     <main>
       <TopBar />
       <HeroFunnel />
+      <HardwareDecomposition />
+      <TeamSection />
+      <ContactSection />
     </main>
   );
 }

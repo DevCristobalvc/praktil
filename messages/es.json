@@ -1,15 +1,75 @@
 {
   "hero": {
-    "tagline": "Tú lo imaginas, nosotros lo creamos.",
+    "tagline1": "Tú lo imaginas,",
+    "tagline2": "nosotros lo creamos.",
     "subtitle": "Laboratorio tecnológico",
     "ctaLeft": "Escríbenos",
     "ctaRight": "Hablemos",
     "waMessage": "Hola, me interesa conocer más sobre Praktil.",
     "scrollHint": "Desliza para desarmar"
   },
+  "decomposition": {
+    "title": "Qué hacemos",
+    "intro": "Todo sistema se puede desarmar. Nosotros dominamos cada pieza.",
+    "final1": "Cada pieza, un dominio.",
+    "final2": "Todas juntas, Praktil.",
+    "services": {
+      "ai": {
+        "name": "Inteligencia Artificial",
+        "desc": "Agentes, LLMs y automatización inteligente"
+      },
+      "web3": {
+        "name": "Web2 & Web3",
+        "desc": "Desarrollo web, contratos inteligentes y blockchain"
+      },
+      "networks": {
+        "name": "Redes & Infraestructura",
+        "desc": "Diseño y despliegue de redes empresariales"
+      },
+      "iot": {
+        "name": "IoT & Hardware",
+        "desc": "Dispositivos conectados y electrónica a medida"
+      },
+      "printing": {
+        "name": "Impresión 3D",
+        "desc": "Prototipado y fabricación digital"
+      },
+      "antennas": {
+        "name": "Antenas & Telecom",
+        "desc": "Enlaces, cobertura y radiofrecuencia"
+      },
+      "security": {
+        "name": "Seguridad & CCTV",
+        "desc": "Videovigilancia y sistemas de monitoreo"
+      },
+      "cloud": {
+        "name": "Cloud & DevOps",
+        "desc": "Nube, on-premise y entrega continua"
+      }
+    }
+  },
+  "team": {
+    "title": "Equipo",
+    "subtitle": "Las piezas que arman todo.",
+    "cristobal": {
+      "name": "Cristóbal Valencia Cerón",
+      "role": "Entrepreneur · Full-Stack AI Engineer",
+      "bio": "IA, blockchain y desarrollo full-stack. AI Engineer en Rappi, DevRel en Ethereum Cali, presidente IEEE Computer Society USC."
+    },
+    "juan": {
+      "name": "Juan Sebastián Duque",
+      "role": "Chief Digital Solutions Architect",
+      "bio": "Arquitectura de soluciones digitales de extremo a extremo."
+    },
+    "linkedin": "Ver LinkedIn"
+  },
+  "contact": {
+    "title": "Hablemos",
+    "subtitle": "Cuéntanos qué imaginas.",
+    "footer": "Praktil — Laboratorio Tecnológico"
+  },
   "nav": {
     "about": "Qué hacemos",
-    "portfolio": "Portafolio",
     "team": "Equipo",
     "contact": "Contacto"
   },

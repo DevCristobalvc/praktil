@@ -1,15 +1,75 @@
 {
   "hero": {
-    "tagline": "You imagine it, we build it.",
+    "tagline1": "You imagine it,",
+    "tagline2": "we build it.",
     "subtitle": "Technology laboratory",
     "ctaLeft": "Write to us",
     "ctaRight": "Let's talk",
     "waMessage": "Hi, I'd like to know more about Praktil.",
     "scrollHint": "Scroll to disassemble"
   },
+  "decomposition": {
+    "title": "What we do",
+    "intro": "Every system can be taken apart. We master every piece.",
+    "final1": "Each piece, a domain.",
+    "final2": "All together, Praktil.",
+    "services": {
+      "ai": {
+        "name": "Artificial Intelligence",
+        "desc": "Agents, LLMs and intelligent automation"
+      },
+      "web3": {
+        "name": "Web2 & Web3",
+        "desc": "Web development, smart contracts and blockchain"
+      },
+      "networks": {
+        "name": "Networks & Infrastructure",
+        "desc": "Enterprise network design and deployment"
+      },
+      "iot": {
+        "name": "IoT & Hardware",
+        "desc": "Connected devices and custom electronics"
+      },
+      "printing": {
+        "name": "3D Printing",
+        "desc": "Prototyping and digital fabrication"
+      },
+      "antennas": {
+        "name": "Antennas & Telecom",
+        "desc": "Links, coverage and radiofrequency"
+      },
+      "security": {
+        "name": "Security & CCTV",
+        "desc": "Video surveillance and monitoring systems"
+      },
+      "cloud": {
+        "name": "Cloud & DevOps",
+        "desc": "Cloud, on-premise and continuous delivery"
+      }
+    }
+  },
+  "team": {
+    "title": "Team",
+    "subtitle": "The pieces that build everything.",
+    "cristobal": {
+      "name": "Cristóbal Valencia Cerón",
+      "role": "Entrepreneur · Full-Stack AI Engineer",
+      "bio": "AI, blockchain and full-stack development. AI Engineer at Rappi, DevRel at Ethereum Cali, IEEE Computer Society USC president."
+    },
+    "juan": {
+      "name": "Juan Sebastián Duque",
+      "role": "Chief Digital Solutions Architect",
+      "bio": "End-to-end digital solutions architecture."
+    },
+    "linkedin": "View LinkedIn"
+  },
+  "contact": {
+    "title": "Let's talk",
+    "subtitle": "Tell us what you imagine.",
+    "footer": "Praktil — Technology Laboratory"
+  },
   "nav": {
     "about": "What we do",
-    "portfolio": "Portfolio",
     "team": "Team",
     "contact": "Contact"
   },

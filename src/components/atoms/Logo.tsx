@@ -14,7 +14,7 @@ export function Logo({ size = 120, priority = false, className }: LogoProps) {
       width={size}
       height={size}
       priority={priority}
-      className={className}
+      className={`rounded-full ${className ?? ""}`}
     />
   );
 }
