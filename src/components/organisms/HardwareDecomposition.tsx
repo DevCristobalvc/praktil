@@ -598,11 +598,6 @@ export function HardwareDecomposition() {
     [0, 0.02, INTRO_END - 0.01, INTRO_END],
     [0, 1, 1, 0],
   );
-  const boardOpacity = useTransform(
-    scrollYProgress,
-    [FINAL_START - 0.02, FINAL_START],
-    [1, 0],
-  );
   const boardRotateX = useTransform(
     scrollYProgress,
     [0, INTRO_END * 2],
@@ -634,13 +629,10 @@ export function HardwareDecomposition() {
 
         {/* The board */}
         <div style={{ perspective: 1400 }} className="relative z-10">
-          <motion.div
-            style={{ opacity: boardOpacity, rotateX: boardRotateX }}
-            className="relative"
-          >
+          <motion.div style={{ rotateX: boardRotateX }} className="relative">
             <svg
               viewBox="0 0 340 460"
-              className="h-auto w-[280px] text-foreground sm:w-[330px]"
+              className="h-auto w-[280px] overflow-visible text-foreground sm:w-[330px]"
               aria-hidden
             >
               <BoardBase />
@@ -667,14 +659,11 @@ export function HardwareDecomposition() {
         </div>
 
         {/* CAD-style caption */}
-        <motion.span
-          style={{ opacity: boardOpacity }}
-          className="z-10 mt-6 text-[0.6rem] tracking-[0.35em] text-muted uppercase"
-        >
+        <span className="z-10 mt-6 text-[0.6rem] tracking-[0.35em] text-muted uppercase">
           PRK-001 · SCALE 1:1 · LAB
-        </motion.span>
+        </span>
 
-        {/* Service labels */}
+        {/* Service labels + final message, always below the board */}
         <div className="relative z-10 h-36 w-full max-w-2xl">
           {SERVICES.map((service, i) => (
             <ServiceLabel
@@ -686,20 +675,19 @@ export function HardwareDecomposition() {
               desc={t(`services.${service}.desc`)}
             />
           ))}
-        </div>
 
-        {/* Final message */}
-        <motion.div
-          style={{ opacity: finalOpacity, scale: finalScale }}
-          className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2 text-center"
-        >
-          <h2 className="font-display text-3xl font-medium sm:text-5xl">
-            {t("final1")}
-          </h2>
-          <h2 className="font-display text-3xl font-medium text-muted sm:text-5xl">
-            {t("final2")}
-          </h2>
-        </motion.div>
+          <motion.div
+            style={{ opacity: finalOpacity, scale: finalScale }}
+            className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-1 text-center"
+          >
+            <h2 className="font-display text-2xl font-medium sm:text-4xl">
+              {t("final1")}
+            </h2>
+            <h2 className="font-display text-2xl font-medium text-muted sm:text-4xl">
+              {t("final2")}
+            </h2>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
