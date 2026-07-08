@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "tagline": "Você imagina, nós criamos.",
+    "subtitle": "Laboratório de tecnologia",
+    "ctaLeft": "Escreva para nós",
+    "ctaRight": "Vamos conversar",
+    "waMessage": "Olá, quero saber mais sobre a Praktil.",
+    "scrollHint": "Role para desmontar"
+  },
+  "nav": {
+    "about": "O que fazemos",
+    "portfolio": "Portfólio",
+    "team": "Equipe",
+    "contact": "Contato"
+  },
+  "theme": {
+    "toggle": "Alternar tema"
+  },
+  "locale": {
+    "label": "Idioma"
+  }
+}
