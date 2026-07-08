@@ -1,232 +1,114 @@
-# Praktil — Documento de Idea, Diseño y Requerimientos
+# Praktil — Brief Creativo
 
-## Concepto Central
-**"Tu lo imaginas, nosotros lo creamos."**
-
-Praktil no es una agencia. Es un laboratorio tecnológico de alto perfil donde cualquier idea técnica se materializa. El sitio debe sentirse como entrar a un laboratorio de élite: frío, preciso, con carácter. El primer impacto debe hacer que el visitante pare de scrollear.
-
-Audiencia objetivo: gobiernos, corporaciones, fondos de inversión, startups con capital.
+> Este documento es una guía de intención, no un pliego de condiciones.
+> Fable tiene criterio propio — úsalo. Si algo aquí no te convence técnica o estéticamente, propón algo mejor.
 
 ---
 
-## Experiencia de Entrada — Hero Funnel
+## Quiénes somos
 
-Lo primero que ve el usuario ocupa el 100% del viewport. No hay navbar agresivo, no hay menú. Solo:
+**Praktil** es un laboratorio tecnológico. No una agencia, no una consultora — un laboratorio.
+Hacemos lo que sea que tenga que ver con tecnología: blockchain, IA, redes, DevOps, cloud, on-premise, impresión 3D, IoT, hardware, antenas, cámaras, web2, web3.
+
+Nuestros clientes son grandes. Gobiernos, corporaciones, fondos. El sitio tiene que hablarles a ellos.
+
+**Frase:** *"Tu lo imaginas, nosotros lo creamos."*
+
+---
+
+## La Experiencia que Queremos
+
+Cuando alguien entra a la página debe parar. Debe mirar. No debe saber bien qué va a pasar cuando scrollee.
+
+### Idea central de animación
+
+Imagina que en el centro de la pantalla hay un **servidor, una Raspberry Pi, o algún componente de hardware real** — renderizado en 3D, ilustración técnica, o SVG animado. A medida que el usuario hace scroll, ese objeto se va **descomponiendo**: los componentes se separan, se mueven, se disuelven. Cada pieza que se desprende da lugar a uno de nuestros servicios.
+
+El hardware se desmonta para mostrar lo que somos. Es literal y metafórico a la vez.
+
+Al final del scroll, cuando el hardware ya está completamente desarmado en el espacio, aparece el equipo. Como si nosotros fuéramos las piezas que arman todo.
+
+Esta es la idea — Fable decide si es un SVG, Three.js, Lottie, ilustración CSS, o algo completamente distinto. Lo que importa es la narrativa visual.
+
+### Punto de entrada — Hero
+
+Lo primero que se ve (100vh, sin scroll):
+- El logo
+- La frase
+- Alguna animación sutil que anticipe lo que viene
+- Dos botones de contacto WhatsApp — uno a la izquierda, otro a la derecha
 
 ```
-          [LOGO]
-
-   "Tu lo imaginas, nosotros lo creamos."
-          
-         [animación sutil / partículas / glitch]
-
-   [+57 300 541 2940]        [+57 315 812 5673]
-   wa.me/573005412940        wa.me/573158125673
+wa.me/573005412940   →  número izquierdo
+wa.me/573158125673   →  número derecho
 ```
 
-- Los dos números son botones de WhatsApp (`https://wa.me/573005412940`)
-- Posicionados simétricamente: izquierda y derecha
-- Al hover: efecto de activación — borde que se ilumina, vibración sutil
-- Texto flotante: "Escríbenos ahora" en los 3 idiomas rotando
-- El logo entra con animación (fade + scale desde 0.8 a 1)
-- La frase aparece letra por letra o palabra por palabra
+El resto de la página empieza debajo de ese primer viewport.
 
 ---
 
-## Identidad Visual
+## Restricciones Reales (no negociables)
 
-| Elemento | Valor |
-|---|---|
-| Paleta base | `#000000` y `#FFFFFF` |
-| Grises | `#111`, `#222`, `#888`, `#CCC`, `#F5F5F5` |
-| Modo por defecto | Light (blanco con texto negro) |
-| Modo oscuro | Toggle disponible, invertido completo |
-| Tipografía | Space Grotesk (títulos) + Inter (cuerpo) |
-| Logo | `/logo.png` — ya en repo |
-| Bordes | `1px solid` con bajo contraste, muy finos |
-| Espaciado | Generoso. El vacío es parte del diseño. |
-
-**Regla de oro:** Si algo se puede quitar y la página sigue comunicando, se quita.
+- **Paleta:** Solo blanco, negro y grises. Sin color.
+- **Modo oscuro disponible** (light es el default)
+- **Multi-idioma:** Español (default), English, Português Brasil — desde el día 0, todo en archivos de traducción
+- **Código modular:** Atomic design. Un componente = un archivo. Reutilizable.
+- **Stack sugerido:** Next.js 15, Tailwind CSS, Framer Motion, TypeScript, next-intl — si Fable ve algo mejor para la animación del hardware, lo justifica y lo usa
+- **Deploy:** Vercel
 
 ---
 
-## Estructura de Secciones
+## Secciones (en orden, pero flexibles en forma)
 
-### 0. Hero Funnel *(primer viewport)*
-- Logo + frase + animación
-- Dos botones WhatsApp (izq / der)
-- Sin navbar visible al inicio — aparece al scroll hacia arriba
+1. **Hero** — logo, frase, dos WhatsApp CTA
+2. **La animación del hardware** — scroll-driven, servicios emergiendo de las piezas
+3. **Qué hacemos** — si la animación no alcanza a cubrir todo, aquí se expande
+4. **Portfolio** — placeholder elegante por ahora
+5. **Equipo** — los dos integrantes
+6. **Contacto** — formulario minimalista + los WhatsApp de nuevo
 
-### 1. Qué es Praktil
-- Párrafo corto, contundente
-- Números o stats si aplican (proyectos, tecnologías, años)
-- Fondo alternado (negro sobre blanco o viceversa)
+---
 
-### 2. Capacidades
-Grid modular por área. Cada card entra al hacer scroll:
-- 🌐 Web2 & Web3 / Blockchain
-- ☁️ Cloud & DevOps (on-premise y cloud)
-- 🔌 Redes & Infraestructura
-- 🔧 IoT & Hardware
-- 🖨️ Impresión 3D & Fabricación
-- 📡 Antenas & Telecomunicaciones
-- 📷 Seguridad (CCTV, cámaras IP)
-- 🤖 AI Engineering
-
-### 3. Portfolio / Proyectos
-- Placeholder elegante por ahora
-- Filtros por categoría técnica
-- Cards con hover reveal (descripción aparece al pasar el mouse)
-
-### 4. Equipo
+## Equipo
 
 **Cristóbal Valencia Cerón**
-- Rol: Entrepreneur | Full-Stack AI Engineer
+- Entrepreneur | Full-Stack AI Engineer
+- AI Engineer en Rappi · Blockchain Engineer · DevRel Ethereum Cali · Presidente IEEE Computer Society USC · CAF · SENA
+- Stack: Next.js, NestJS, Solidity, Ethereum, AI/ML, Power Platform, Laravel
 - LinkedIn: https://co.linkedin.com/in/cristobalvalenciaceron
-- Background: AI Software Engineer en Rappi, Blockchain Engineer en AsymmetricFrequency, DevRel en Ethereum Cali, Presidente IEEE Computer Society USC, Developer en CAF, SENA, USC.
-- Expertise: AI, Blockchain/Web3 (Ethereum, Solidity), Full-Stack (Next.js, NestJS, Laravel), DevOps, Microsoft Power Platform.
 
 **Juan Sebastián Duque**
-- Rol: Chief Digital Solutions Architect
+- Chief Digital Solutions Architect
 - LinkedIn: https://www.linkedin.com/in/juan-sebasti%C3%A1n-duque-5a7075195/
-- Background: [completar cuando Juan comparta más info]
-- Expertise: Arquitectura de soluciones digitales
-
-*Diseño de la sección:* Dos columnas, foto en blanco y negro, nombre grande, rol en gris, hover que revela links y stack técnico.
-
-### 5. Contacto
-- Formulario minimalista: nombre, empresa, mensaje
-- Los dos números WhatsApp de nuevo
-- Sin redes sociales genéricas
+- Info adicional pendiente de completar
 
 ---
 
-## Multi-idioma
+## Lo que NO queremos
 
-| Idioma | Código | Default |
-|---|---|---|
-| Español | `es` | ✅ Sí |
-| English | `en` | No |
-| Português (Brasil) | `pt-BR` | No |
-
-- Todos los textos en archivos de traducción (`/messages/es.json`, etc.)
-- Selector de idioma discreto en navbar
-- URL paths: `/`, `/en`, `/pt-BR`
+- Nada que se parezca a una plantilla
+- Sin colores que no sean blanco/negro/gris
+- Sin secciones relleno que no digan nada
+- Sin animaciones decorativas — cada animación cuenta algo
+- Sin hero genérico con imagen de fondo y texto encima
 
 ---
 
-## Animaciones y Microinteracciones
+## Nivel de referencia
 
-| Elemento | Animación |
-|---|---|
-| Logo en hero | Fade + scale entrance |
-| Frase hero | Texto aparece letra por letra o por palabra |
-| Botones WhatsApp | Borde iluminado + pulso en hover |
-| Secciones al scroll | Fade in desde abajo (stagger entre elementos) |
-| Cards de capacidades | Entrada escalonada, hover con elevación sutil |
-| Cursor | Custom cursor (círculo que sigue el mouse) |
-| Navbar | Aparece solo al hacer scroll up, desaparece al bajar |
-| Dark mode toggle | Transición suave, no flash |
+https://somosmangobiche.com/ — esa intención, ese cuidado, esa sensación de que alguien pensó cada pixel.
 
-**Referencia de nivel:** https://somosmangobiche.com/ — ese nivel de intención y cuidado en cada píxel.
+No copiar el estilo — igualar el nivel de atención.
 
 ---
 
-## Arquitectura de Código — Atomic Design
+## Estado del Repo
 
-```
-/src
-  /components
-    /atoms          # Button, Text, Icon, Logo, Badge
-    /molecules      # WhatsAppCTA, CapabilityCard, TeamCard, NavItem
-    /organisms      # HeroFunnel, CapabilitiesGrid, TeamSection, ContactForm
-    /templates      # PageLayout, SectionWrapper
-  /sections         # HeroSection, AboutSection, CapabilitiesSection, etc.
-  /messages         # es.json, en.json, pt-BR.json
-  /hooks            # useTheme, useScrollDirection, useInView
-  /lib              # utils, constants, waLinks
-  /styles           # globals, tokens
-  /app              # Next.js App Router
-    /[locale]
-      page.tsx
-      layout.tsx
-```
-
-**Reglas de código:**
-- Un componente = un archivo
-- Props tipadas con TypeScript
-- Sin lógica de negocio en los componentes de UI
-- Sin estilos inline — solo Tailwind classes
-- Animaciones con Framer Motion, no CSS puro para las complejas
+- Repo: https://github.com/DevCristobalvc/praktil
+- Rama: `main`
+- Archivos actuales: `logo.png`, `idea.md`
+- Siguiente paso: inicializar el proyecto
 
 ---
 
-## Stack Técnico
-
-| Capa | Tecnología |
-|---|---|
-| Framework | Next.js 15 (App Router) |
-| Estilos | Tailwind CSS v4 |
-| Animaciones | Framer Motion |
-| i18n | next-intl |
-| Dark mode | next-themes |
-| Formulario | React Hook Form |
-| Deploy | Vercel |
-| Lenguaje | TypeScript |
-
----
-
-## WhatsApp Links
-
-```
-wa.me/573005412940  → Número izquierdo
-wa.me/573158125673  → Número derecho
-```
-
-Mensaje predefinido sugerido: `"Hola, me interesa conocer más sobre Praktil."`
-
-```
-https://wa.me/573005412940?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20Praktil.
-```
-
----
-
-## Performance
-
-- LCP < 2.5s
-- Imágenes en WebP / AVIF
-- Logo optimizado con `next/image`
-- Fuentes con `next/font`
-- Sin bloqueos de render
-
----
-
-## Reglas No Negociables
-
-1. Nada de plantillas visuales genéricas
-2. El vacío es parte del diseño — no rellenar por rellenar
-3. Mobile-first, pero desktop es la experiencia principal
-4. Animaciones con propósito, no decorativas
-5. Solo blanco, negro y grises
-6. Atomic design estricto — cada componente es reutilizable
-7. Todos los textos en archivos de traducción desde el día 0
-8. Código limpio, modular, sin magia
-
----
-
-## Checklist de Estado
-
-- [x] Repo creado: https://github.com/DevCristobalvc/praktil
-- [x] Logo en repo (`logo.png`)
-- [x] Documento de idea completo
-- [ ] Setup Next.js 15 + Tailwind + Framer Motion + TypeScript
-- [ ] Configurar next-intl (ES / EN / PT-BR)
-- [ ] Atomic design system base (atoms y molecules)
-- [ ] Hero Funnel con botones WhatsApp
-- [ ] Resto de secciones
-- [ ] Info completa Juan Sebastián
-- [ ] Deploy en Vercel
-
----
-
-*Praktil — Laboratorio Tecnológico | 2025*
+*Praktil — Laboratorio Tecnológico*
