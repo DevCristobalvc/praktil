@@ -5,6 +5,8 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import { routing } from "@/i18n/routing";
+import { GrainOverlay } from "@/components/atoms/GrainOverlay";
+import { CursorFollower } from "@/components/atoms/CursorFollower";
 import "../globals.css";
 
 const inter = Inter({
@@ -52,7 +54,11 @@ export default async function LocaleLayout({
           defaultTheme="light"
           enableSystem={false}
         >
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider>
+            {children}
+            <GrainOverlay />
+            <CursorFollower />
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>

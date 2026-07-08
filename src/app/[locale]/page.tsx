@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import { TopBar } from "@/components/organisms/TopBar";
 import { HeroFunnel } from "@/components/organisms/HeroFunnel";
 import { HardwareDecomposition } from "@/components/organisms/HardwareDecomposition";
+import { TechMarquee } from "@/components/molecules/TechMarquee";
 import { TeamSection } from "@/components/organisms/TeamSection";
 import { ContactSection } from "@/components/organisms/ContactSection";
 
@@ -24,6 +25,7 @@ export default async function HomePage({
       <TopBar />
       <HeroFunnel />
       <HardwareDecomposition />
+      <TechMarquee />
       <TeamSection />
       <ContactSection />
     </main>

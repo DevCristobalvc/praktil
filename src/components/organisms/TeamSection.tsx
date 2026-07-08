@@ -33,6 +33,7 @@ export function TeamSection() {
           linkedin={LINKS.linkedinCristobal}
           linkedinLabel={t("linkedin")}
           initials="CV"
+          photo="/team/cristobal.jpg"
         />
         <TeamCard
           name={t("juan.name")}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 type TeamCardProps = {
@@ -29,21 +30,29 @@ export function TeamCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ delay, duration: 0.6, ease: "easeOut" }}
-      className="flex max-w-sm flex-col items-center gap-4 text-center"
+      className="group flex max-w-sm flex-col items-center gap-4 text-center"
     >
-      <div className="flex h-40 w-40 items-center justify-center overflow-hidden rounded-full border-2 border-foreground/80 transition-transform duration-300 hover:scale-105">
-        {photo ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={photo}
-            alt={name}
-            className="h-full w-full object-cover grayscale"
-          />
-        ) : (
-          <span className="font-display text-4xl font-medium text-muted">
-            {initials}
-          </span>
-        )}
+      <div className="relative">
+        {/* dashed orbit that spins on hover */}
+        <div
+          aria-hidden
+          className="absolute -inset-2 rounded-full border border-dashed border-foreground/20 transition-transform duration-700 group-hover:rotate-45"
+        />
+        <div className="relative flex h-40 w-40 items-center justify-center overflow-hidden rounded-full border-2 border-foreground/80 transition-transform duration-300 group-hover:scale-105">
+          {photo ? (
+            <Image
+              src={photo}
+              alt={name}
+              width={160}
+              height={160}
+              className="h-full w-full object-cover grayscale"
+            />
+          ) : (
+            <span className="font-display text-4xl font-medium text-muted">
+              {initials}
+            </span>
+          )}
+        </div>
       </div>
       <div className="flex flex-col gap-1">
         <h3 className="font-display text-xl font-medium sm:text-2xl">{name}</h3>

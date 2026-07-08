@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Logo } from "@/components/atoms/Logo";
+import { CornerMarks } from "@/components/atoms/CornerMarks";
+import { CircuitBackdrop } from "@/components/molecules/CircuitBackdrop";
 import { WhatsAppCTA } from "@/components/molecules/WhatsAppCTA";
 import { WHATSAPP } from "@/lib/constants";
 
@@ -30,16 +32,28 @@ export function HeroFunnel() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative flex min-h-svh flex-col items-center justify-center gap-12 px-6">
+    <section className="relative flex min-h-svh flex-col items-center justify-center gap-12 overflow-hidden px-6">
+      <div className="bg-dotgrid absolute inset-0" aria-hidden />
+      <CircuitBackdrop />
+      <CornerMarks />
+
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10"
       >
-        <Logo size={140} priority />
+        {/* rotating dashed orbit */}
+        <motion.div
+          aria-hidden
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+          className="absolute -inset-4 rounded-full border border-dashed border-foreground/25"
+        />
+        <Logo size={140} priority className="relative" />
       </motion.div>
 
-      <div className="flex flex-col items-center gap-3 text-center">
+      <div className="relative z-10 flex flex-col items-center gap-3 text-center">
         <h1 className="font-display max-w-3xl text-4xl font-medium leading-tight sm:text-6xl">
           <AnimatedLine text={t("tagline1")} baseDelay={0.5} />
           <AnimatedLine text={t("tagline2")} baseDelay={0.9} />
@@ -54,7 +68,7 @@ export function HeroFunnel() {
         </motion.p>
       </div>
 
-      <div className="flex w-full max-w-2xl flex-col items-center justify-between gap-4 sm:flex-row">
+      <div className="relative z-10 flex w-full max-w-2xl flex-col items-center justify-between gap-4 sm:flex-row">
         <WhatsAppCTA
           number={WHATSAPP.left}
           label={t("ctaLeft")}
@@ -75,7 +89,7 @@ export function HeroFunnel() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.2, duration: 0.8 }}
-        className="absolute bottom-8 text-xs tracking-widest uppercase text-muted"
+        className="absolute bottom-8 z-10 text-xs tracking-widest uppercase text-muted"
       >
         <motion.span
           animate={{ y: [0, 6, 0] }}

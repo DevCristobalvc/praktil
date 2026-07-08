@@ -40,3 +40,10 @@ body {
   background: var(--foreground);
   color: var(--background);
 }
+
+/* Technical dot grid backdrop, fades out toward edges */
+.bg-dotgrid {
+  background-image: radial-gradient(var(--line) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%);
+}
