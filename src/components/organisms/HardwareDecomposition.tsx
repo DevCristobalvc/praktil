@@ -40,8 +40,7 @@ const EXITS: Record<(typeof SERVICES)[number], Exit> = {
 };
 
 const INTRO_END = 0.08;
-const FINAL_START = 0.9;
-const WINDOW = (FINAL_START - INTRO_END) / SERVICES.length;
+const WINDOW = (1 - INTRO_END) / SERVICES.length;
 
 function partRange(i: number): [number, number] {
   return [INTRO_END + i * WINDOW, INTRO_END + (i + 1) * WINDOW];
@@ -603,16 +602,6 @@ export function HardwareDecomposition() {
     [0, INTRO_END * 2],
     [16, 0],
   );
-  const finalOpacity = useTransform(
-    scrollYProgress,
-    [FINAL_START, FINAL_START + 0.05],
-    [0, 1],
-  );
-  const finalScale = useTransform(
-    scrollYProgress,
-    [FINAL_START, FINAL_START + 0.05],
-    [0.9, 1],
-  );
 
   return (
     <section ref={ref} className="relative h-[700vh]">
@@ -663,7 +652,7 @@ export function HardwareDecomposition() {
           PRK-001 · SCALE 1:1 · LAB
         </span>
 
-        {/* Service labels + final message, always below the board */}
+        {/* Service labels, always below the board */}
         <div className="relative z-10 h-36 w-full max-w-2xl">
           {SERVICES.map((service, i) => (
             <ServiceLabel
@@ -675,20 +664,36 @@ export function HardwareDecomposition() {
               desc={t(`services.${service}.desc`)}
             />
           ))}
-
-          <motion.div
-            style={{ opacity: finalOpacity, scale: finalScale }}
-            className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-1 text-center"
-          >
-            <h2 className="font-display text-2xl font-medium sm:text-4xl">
-              {t("final1")}
-            </h2>
-            <h2 className="font-display text-2xl font-medium text-muted sm:text-4xl">
-              {t("final2")}
-            </h2>
-          </motion.div>
         </div>
       </div>
+    </section>
+  );
+}
+
+/** Static closing statement — animates in once and stays. */
+export function DecompositionFinale() {
+  const t = useTranslations("decomposition");
+
+  return (
+    <section className="flex min-h-[60vh] flex-col items-center justify-center gap-2 px-6 text-center">
+      <motion.h2
+        initial={{ opacity: 0, y: 24, scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-120px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="font-display text-3xl font-medium sm:text-5xl"
+      >
+        {t("final1")}
+      </motion.h2>
+      <motion.h2
+        initial={{ opacity: 0, y: 24, scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-120px" }}
+        transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
+        className="font-display text-3xl font-medium text-muted sm:text-5xl"
+      >
+        {t("final2")}
+      </motion.h2>
     </section>
   );
 }
