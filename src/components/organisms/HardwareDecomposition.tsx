@@ -560,16 +560,18 @@ function ServiceLabel({
   total: number;
 }) {
   const [start, end] = partRange(index);
+  // Hard on/off: the label must never sit half-faded when scrolling stops
+  // mid-window, so the visibility ramp is a near-instant step (3% of the
+  // window) with no vertical drift.
   const opacity = useTransform(
     progress,
-    [start, start + WINDOW * 0.25, end - WINDOW * 0.15, end],
+    [start, start + WINDOW * 0.03, end - WINDOW * 0.03, end],
     [0, 1, 1, 0],
   );
-  const yText = useTransform(progress, [start, start + WINDOW * 0.25], [16, 0]);
 
   return (
     <motion.div
-      style={{ opacity, y: yText }}
+      style={{ opacity }}
       className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-2 text-center"
     >
       <span className="text-xs tracking-widest text-muted tabular-nums">

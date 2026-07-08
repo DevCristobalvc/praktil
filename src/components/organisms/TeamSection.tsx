@@ -42,6 +42,7 @@ export function TeamSection() {
           linkedin={LINKS.linkedinJuan}
           linkedinLabel={t("linkedin")}
           initials="JD"
+          photo="/team/duque.jpg"
           delay={0.15}
         />
       </div>
